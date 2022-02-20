@@ -1,6 +1,6 @@
 # chimchirpi
 
-<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/390.png" align="right" />
+<img height="100" src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/390.png" align="right" />
 
 This is a pi-based synthesizer, that uses a [pi in a gameboy-case](https://github.com/konsumer/chimchar-pi)
 
