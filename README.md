@@ -15,12 +15,13 @@ This is a pi-based synthesizer, that uses a [pi in a gameboy-case](https://githu
 
 ### emulationstation config
 
-```
+```bash
 sudo nano /opt/retropie/configs/all/emulationstation/es_systems.cfg
 ```
 
 add this to bottom (inside `</systems>`)
-```
+
+```xml
 <system>
     <name>puredata</name>
     <fullname>Puredata</fullname>
