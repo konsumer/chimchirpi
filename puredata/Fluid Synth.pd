@@ -1,0 +1,135 @@
+#N canvas 98 220 1344 714 12;
+#X obj 99 168 tgl 20 0 empty bLEFT empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 141 167 tgl 20 0 empty bRIGHT empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 121 148 tgl 20 0 empty bUP empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
+#X obj 120 188 tgl 20 0 empty bDOWN empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 201 146 tgl 20 0 empty bX X 5 10 0 15 #fcfcfc #000000 #000000
+0 1;
+#X obj 181 167 tgl 20 0 empty bY Y 5 10 0 15 #fcfcfc #000000 #000000
+0 1;
+#X obj 221 166 tgl 20 0 empty bA A 5 10 0 15 #fcfcfc #000000 #000000
+0 1;
+#X obj 201 187 tgl 20 0 empty bB B 5 10 0 15 #fcfcfc #000000 #000000
+0 1;
+#X obj 81 116 tgl 20 0 empty bL L 5 10 0 15 #fcfcfc #000000 #000000
+0 1;
+#X obj 243 118 tgl 20 0 empty bR R 5 10 0 15 #fcfcfc #000000 #000000
+0 1;
+#X obj 138 221 tgl 20 0 empty bSELECT SELECT -5 10 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 180 221 tgl 20 0 empty bSTART START -5 10 0 10 #fcfcfc #000000
+#000000 1 1;
+#X obj 135 300 > 0;
+#X obj 185 305 > 0;
+#X obj 160 335 &;
+#X obj 180 260 t b f;
+#X msg 160 390 \; pd quit \;;
+#X text 80 455 exit when START + SELECT are pressed;
+#X obj 160 365 select 1;
+#X obj 20 20 .lib/controller;
+#X msg 860 65 \; pd dsp 1;
+#X obj 860 25 loadbang;
+#X obj 1120 530 dac~;
+#X obj 1110 435 r sf;
+#X obj 640 455 notein;
+#X obj 640 480 pack 0 0 0;
+#X msg 640 505 \$3 \$1 \$2;
+#X obj 720 480 pack 0 0 0;
+#X obj 720 455 ctlin;
+#X obj 800 455 bendin 0 1;
+#X obj 800 480 pack 0 0;
+#X msg 720 505 cc \$3 \$2 \$1;
+#X msg 800 505 b \$2 \$1;
+#X obj 695 545 s sf;
+#X floatatom 960 455 5 0 127 2 bank - -, f 5;
+#X floatatom 945 285 5 1 127 2 program - -, f 5;
+#X msg 960 500 \; sf bank 1 \$1;
+#X msg 940 310 \; sf prog 1 \$1;
+#X obj 895 145 select 1;
+#X obj 895 120 r bUP;
+#X obj 975 145 select 1;
+#X obj 975 120 r bDOWN;
+#X obj 840 330 print PROGRAM;
+#X obj 1110 465 fluid~;
+#X obj 997 242 +;
+#X obj 900 170 t b b;
+#X obj 980 170 t b b;
+#X msg 920 200 1;
+#X msg 975 195 -1;
+#X obj 940 245 i;
+#X obj 485 335 s setsoundfont;
+#X obj 335 210 r bA;
+#X obj 485 210 r bB;
+#X obj 625 215 r bX;
+#X obj 765 215 r bY;
+#X obj 335 240 select 1;
+#X obj 485 240 select 1;
+#X obj 625 240 select 1;
+#X obj 760 245 select 1;
+#X obj 1160 400 r setsoundfont;
+#X msg 480 270 symbol nintendo;
+#X msg 620 275 symbol Roland_SC-88;
+#X msg 785 275 symbol Touhou;
+#X msg 1160 425 load \$1;
+#X msg 340 275 symbol famicom;
+#X connect 10 0 12 0;
+#X connect 11 0 15 0;
+#X connect 12 0 14 0;
+#X connect 13 0 14 1;
+#X connect 14 0 18 0;
+#X connect 15 0 12 0;
+#X connect 15 1 13 0;
+#X connect 18 0 16 0;
+#X connect 21 0 20 0;
+#X connect 21 0 61 0;
+#X connect 23 0 43 0;
+#X connect 24 0 25 0;
+#X connect 24 1 25 1;
+#X connect 24 2 25 2;
+#X connect 25 0 26 0;
+#X connect 26 0 33 0;
+#X connect 27 0 31 0;
+#X connect 28 0 27 0;
+#X connect 28 1 27 1;
+#X connect 28 2 27 2;
+#X connect 29 0 30 0;
+#X connect 29 1 30 1;
+#X connect 30 0 32 0;
+#X connect 31 0 33 0;
+#X connect 32 0 33 0;
+#X connect 34 0 36 0;
+#X connect 35 0 37 0;
+#X connect 35 0 42 0;
+#X connect 38 0 45 0;
+#X connect 39 0 38 0;
+#X connect 40 0 46 0;
+#X connect 41 0 40 0;
+#X connect 43 0 22 0;
+#X connect 43 1 22 1;
+#X connect 44 0 49 1;
+#X connect 45 0 49 0;
+#X connect 45 1 47 0;
+#X connect 46 0 49 0;
+#X connect 46 1 48 0;
+#X connect 47 0 44 1;
+#X connect 48 0 44 1;
+#X connect 49 0 44 0;
+#X connect 49 0 35 0;
+#X connect 51 0 55 0;
+#X connect 52 0 56 0;
+#X connect 53 0 57 0;
+#X connect 54 0 58 0;
+#X connect 55 0 64 0;
+#X connect 56 0 60 0;
+#X connect 57 0 61 0;
+#X connect 58 0 62 0;
+#X connect 59 0 63 0;
+#X connect 60 0 50 0;
+#X connect 61 0 50 0;
+#X connect 62 0 50 0;
+#X connect 63 0 43 0;
+#X connect 64 0 50 0;
