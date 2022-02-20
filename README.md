@@ -35,4 +35,4 @@ add this to bottom (inside `</systems>`)
 
 ### install purr-data
 
-- find the [armv7l release](wget https://build.opensuse.org/package/binaries/home:aggraef:purr-data-git/purr-data/Raspbian_10)
+- find the [armv7l release](https://build.opensuse.org/package/binaries/home:aggraef:purr-data-git/purr-data/Raspbian_10)
